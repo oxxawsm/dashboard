@@ -3,15 +3,15 @@ import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../features/common/headerSlice'
 import Integration from '../../features/integration'
 
-function InternalPage(){
+function InternalPage() {
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title : "Integrations"}))
-      }, [])
-      
-    return(
+        dispatch(setPageTitle({ title: "Integrations" }))
+    }, [])
+
+    return (
         <Integration />
     )
 }

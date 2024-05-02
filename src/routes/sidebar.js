@@ -2,7 +2,6 @@
 import Squares2X2Icon from '@heroicons/react/24/outline/Squares2X2Icon'
 import WalletIcon from '@heroicons/react/24/outline/WalletIcon'
 import CalendarDaysIcon from '@heroicons/react/24/outline/CalendarDaysIcon'
-import UserIcon from '@heroicons/react/24/outline/UserIcon'
 import Cog6ToothIcon from '@heroicons/react/24/outline/Cog6ToothIcon'
 import BoltIcon from '@heroicons/react/24/outline/BoltIcon'
 import ChartBarIcon from '@heroicons/react/24/outline/ChartBarIcon'
@@ -17,37 +16,38 @@ const routes = [
 
   {
     path: '/app/dashboard',
-    icon: <Squares2X2Icon className={iconClasses}/>, 
+    icon: <Squares2X2Icon className={iconClasses} />,
     name: 'Dashboard',
   },
   {
+    path: '/app/charts', // url
+    icon: <ChartBarIcon className={iconClasses} />, // icon component
+    name: 'Analytics', // name that appear in Sidebar
+  },
+  {
     path: '/app/leads', // url
-    icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+    icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
     name: 'Leads', // name that appear in Sidebar
   },
   {
     path: '/app/transactions', // url
-    icon: <CurrencyDollarIcon className={iconClasses}/>, // icon component
+    icon: <CurrencyDollarIcon className={iconClasses} />, // icon component
     name: 'Transactions', // name that appear in Sidebar
   },
-  {
-    path: '/app/charts', // url
-    icon: <ChartBarIcon className={iconClasses}/>, // icon component
-    name: 'Analytics', // name that appear in Sidebar
-  },
+
   {
     path: '/app/integration', // url
-    icon: <BoltIcon className={iconClasses}/>, // icon component
+    icon: <BoltIcon className={iconClasses} />, // icon component
     name: 'Integration', // name that appear in Sidebar
   },
   {
     path: '/app/calendar', // url
-    icon: <CalendarDaysIcon className={iconClasses}/>, // icon component
+    icon: <CalendarDaysIcon className={iconClasses} />, // icon component
     name: 'Calendar', // name that appear in Sidebar
   },
   {
     path: '/app/team', // url
-    icon: <UsersIcon className={submenuIconClasses}/>, // icon component
+    icon: <UsersIcon className={submenuIconClasses} />, // icon component
     name: 'Team Members', // name that appear in Sidebar
   },
 
@@ -72,11 +72,6 @@ const routes = [
   //       name: 'Forgot Password',
   //     },
   //     {
-  //       path: '/app/blank',
-  //       icon: <DocumentIcon className={submenuIconClasses}/>,
-  //       name: 'Blank Page',
-  //     },
-  //     {
   //       path: '/app/404',
   //       icon: <ExclamationTriangleIcon className={submenuIconClasses}/>,
   //       name: '404',
@@ -84,27 +79,17 @@ const routes = [
   //   ]
   // },
   {
-    path: '', //no url needed as this has submenu
-    icon: <Cog6ToothIcon className={`${iconClasses} inline` }/>, // icon component
-    name: 'Settings', // name that appear in Sidebar
-    submenu : [
-      {
-        path: '/app/settings-profile', //url
-        icon: <UserIcon className={submenuIconClasses}/>, // icon component
-        name: 'Profile', // name that appear in Sidebar
-      },
+    path: '',
+    icon: <Cog6ToothIcon className={`${iconClasses} inline`} />,
+    name: 'Settings',
+    submenu: [
       {
         path: '/app/settings-billing',
-        icon: <WalletIcon className={submenuIconClasses}/>,
+        icon: <WalletIcon className={submenuIconClasses} />,
         name: 'Billing',
       },
-      {
-        path: '/app/settings-team', // url
-        icon: <UsersIcon className={submenuIconClasses}/>, // icon component
-        name: 'Team Members', // name that appear in Sidebar
-      },
     ]
-  },  
+  },
 ]
 
 export default routes

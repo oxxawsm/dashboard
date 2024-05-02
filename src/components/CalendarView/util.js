@@ -1,6 +1,4 @@
-const moment  = require("moment");
-
-module.exports = Object.freeze({
+module.exports = Object({
     CALENDAR_EVENT_STYLE : {
         "BLUE" : "bg-blue-200 dark:bg-blue-600 dark:text-blue-100",
         "GREEN" : "bg-green-200 dark:bg-green-600 dark:text-green-100",
@@ -9,6 +7,4 @@ module.exports = Object.freeze({
         "PINK" : "bg-pink-200 dark:bg-pink-600 dark:text-pink-100",
         "MORE" : "hover:underline cursor-pointer font-medium "
     }
-
-    
 });

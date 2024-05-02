@@ -1,37 +1,33 @@
-import moment from "moment"
-import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import TitleCard from "../../../components/Cards/TitleCard"
 import { showNotification } from '../../common/headerSlice'
 import InputText from '../../../components/Input/InputText'
 import TextAreaInput from '../../../components/Input/TextAreaInput'
-import ToogleInput from '../../../components/Input/ToogleInput'
 
-function ProfileSettings(){
-
+function ProfileSettings() {
 
     const dispatch = useDispatch()
 
     // Call API to update profile settings changes
     const updateProfile = () => {
-        dispatch(showNotification({message : "Profile Updated", status : 1}))    
+        dispatch(showNotification({ message: "Profile Updated", status: 1 }))
     }
 
-    const updateFormValue = ({updateType, value}) => {
+    const updateFormValue = ({ updateType, value }) => {
         console.log(updateType)
     }
 
-    return(
+    return (
         <>
-            
+
             <TitleCard title="Profile Settings" topMargin="mt-2">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <InputText labelTitle="Name" defaultValue="Elena" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Email Id" defaultValue="ellena.titenko@gmail.com" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Title" defaultValue="UI developer" updateFormValue={updateFormValue}/>
-                    <InputText labelTitle="Place" defaultValue="Russia, Saint-Petersburg" updateFormValue={updateFormValue}/>
-                    <TextAreaInput labelTitle="About" defaultValue="Junior UI developer" updateFormValue={updateFormValue}/>
+                    <InputText labelTitle="Name" defaultValue="Elena" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Email Id" defaultValue="ellena.titenko@gmail.com" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Title" defaultValue="UI developer" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Place" defaultValue="Russia, Saint-Petersburg" updateFormValue={updateFormValue} />
+                    <TextAreaInput labelTitle="About" defaultValue="Junior UI developer" updateFormValue={updateFormValue} />
                 </div>
                 <div className="divider" ></div>
                 <div className="mt-16"><button className="btn btn-primary float-right" onClick={() => updateProfile()}>Update</button></div>
@@ -39,6 +35,5 @@ function ProfileSettings(){
         </>
     )
 }
-
 
 export default ProfileSettings

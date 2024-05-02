@@ -3,15 +3,15 @@ import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../features/common/headerSlice'
 import Calendar from '../../features/calendar'
 
-function InternalPage(){
+function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title : "Calendar"}))
-      }, [])
+        dispatch(setPageTitle({ title: "Calendar" }))
+    }, [])
 
 
-    return(
+    return (
         <Calendar />
     )
 }

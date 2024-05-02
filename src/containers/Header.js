@@ -20,13 +20,12 @@ function Header(){
     useEffect(() => {
         themeChange(false)
         if(currentTheme === null){
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
-                setCurrentTheme("dark")
-            }else{
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ) {
                 setCurrentTheme("light")
+            } else {
+                setCurrentTheme("dark")
             }
         }
-        // 👆 false parameter is required for react project
       }, [])
 
 

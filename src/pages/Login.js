@@ -1,13 +1,10 @@
-import {useState, useRef} from 'react'
-import {Link} from 'react-router-dom'
 import Login from '../features/user/Login'
 
-function ExternalPage(){
+function ExternalPage() {
 
-
-    return(
+    return (
         <div className="">
-                <Login />
+            <Login />
         </div>
     )
 }

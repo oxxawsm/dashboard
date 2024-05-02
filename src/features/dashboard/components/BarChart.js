@@ -23,7 +23,7 @@ function BarChart(){
         },
       };
       
-      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+      const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
       
       const data = {
         labels,

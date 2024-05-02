@@ -2,13 +2,9 @@ import LineChart from './components/LineChart'
 import BarChart from './components/BarChart'
 import DoughnutChart from './components/DoughnutChart'
 import PieChart from './components/PieChart'
-import ScatterChart from './components/ScatterChart'
 import StackBarChart from './components/StackBarChart'
 import Datepicker from "react-tailwindcss-datepicker"; 
 import { useState } from 'react'
-
-
-
 
 function Charts(){
 
@@ -48,7 +44,7 @@ function Charts(){
             </div>
 
             <div className="grid lg:grid-cols-2 mt-4 grid-cols-1 gap-6">
-                <ScatterChart />
+                {/* <ScatterChart /> */}
                 <LineChart />
             </div>
         </>

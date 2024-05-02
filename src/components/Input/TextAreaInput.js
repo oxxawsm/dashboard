@@ -1,16 +1,16 @@
 import { useState } from "react"
 
 
-function TextAreaInput({labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType}){
+function TextAreaInput({ labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType }) {
 
     const [value, setValue] = useState(defaultValue)
 
     const updateInputValue = (val) => {
         setValue(val)
-        updateFormValue({updateType, value : val})
+        updateFormValue({ updateType, value: val })
     }
 
-    return(
+    return (
         <div className={`form-control w-full ${containerStyle}`}>
             <label className="label">
                 <span className={"label-text text-base-content " + labelStyle}>{labelTitle}</span>
