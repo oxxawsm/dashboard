@@ -7,7 +7,7 @@ import CheckCircleIcon from '@heroicons/react/24/solid/CheckCircleIcon'
 function ForgotPassword() {
 
     const INITIAL_USER_OBJ = {
-        emailId: ""
+        email: ""
     }
 
     const [loading, setLoading] = useState(false)
@@ -19,7 +19,7 @@ function ForgotPassword() {
         e.preventDefault()
         setErrorMessage("")
 
-        if (userObj.emailId.trim() === "") return setErrorMessage("Email is required! (use any value)")
+        if (userObj.email.trim() === "") return setErrorMessage("Пожалуйста, введите Email")
         else {
             setLoading(true)
             // Call API to send password reset link
@@ -37,7 +37,7 @@ function ForgotPassword() {
         <div className="min-h-screen bg-base-200 flex items-center">
             <div className="card mx-auto w-full max-w-xl">
                 <div className='py-24 px-10'>
-                    <h2 className='text-2xl font-semibold mb-2 text-center'>Forgot Password</h2>
+                    <h2 className='text-2xl font-semibold mb-2 text-center'>Если забыли пароль</h2>
 
                     {
                         linkSent &&
@@ -53,20 +53,30 @@ function ForgotPassword() {
                     {
                         !linkSent &&
                         <>
-                            <p className='my-8 font-semibold text-center'>We will send password reset link on your email</p>
+                            <p className='my-8 font-semibold text-center'>Мы отправим ссылку для сброса пароля на Ваш Email</p>
                             <form onSubmit={(e) => submitForm(e)}>
 
                                 <div className="mb-4">
 
-                                    <InputText type="emailId" defaultValue={userObj.emailId} updateType="emailId" containerStyle="mt-4" labelTitle="Email" updateFormValue={updateFormValue} />
-
-
+                                    <InputText
+                                        type="email"
+                                        defaultValue={userObj.email}
+                                        updateType="email"
+                                        containerStyle="mt-4"
+                                        labelTitle="Email"
+                                        updateFormValue={updateFormValue}
+                                    />
                                 </div>
 
                                 <ErrorText styleClass="mt-12">{errorMessage}</ErrorText>
-                                <button type="submit" className={"btn mt-2 w-full btn-primary" + (loading ? " loading" : "")}>Send Reset Link</button>
+                                <button
+                                    type="submit"
+                                    className={"btn mt-2 w-full btn-primary" + (loading ? " loading" : "")}
+                                >
+                                    Сбросить пароль
+                                </button>
 
-                                <div className='text-center mt-4'>Don't have an account yet? <Link to="/register"><button className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">Register</button></Link></div>
+                                <div className='text-center mt-4'>Ещё нет аккаунта? <Link to="/register"><button className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">Зарегистрироваться</button></Link></div>
                             </form>
                         </>
                     }

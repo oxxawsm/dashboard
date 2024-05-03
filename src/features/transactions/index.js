@@ -4,7 +4,7 @@ import TitleCard from "../../components/Cards/TitleCard"
 import { RECENT_TRANSACTIONS } from "../../utils/dummyData"
 import SearchBar from "../../components/Input/SearchBar"
 
-const TopSideButtons = ({ removeFilter, applyFilter, applySearch }) => {
+const TopSideButtons = ({ applySearch }) => {
 
     const [searchText, setSearchText] = useState("")
 

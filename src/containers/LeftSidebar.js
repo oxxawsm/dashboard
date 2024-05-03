@@ -7,9 +7,6 @@ import { useDispatch } from 'react-redux';
 function LeftSidebar(){
     const location = useLocation();
 
-    const dispatch = useDispatch()
-
-
     const close = (e) => {
         document.getElementById('left-sidebar-drawer').click()
     }
@@ -24,7 +21,7 @@ function LeftSidebar(){
 
                 <li className="mb-2 font-semibold text-xl">
                     {/* иконка */}
-                    <Link to={'/app/dashboard'}><img className="mask mask-squircle w-10" src="/logo192.png" alt="DashWind Logo"/>DashBoard</Link> 
+                    <Link to={'/app/dashboard'}><img className=" w-10" src="/logo.png" alt="DashBoard Logo"/>DashBoard</Link> 
                     </li>
                 {
                     routes.map((route, k) => {

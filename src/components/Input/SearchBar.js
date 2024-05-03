@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SearchBar({searchText, styleClass, placeholderText, setSearchText}) {
+function SearchBar({ searchText, styleClass, placeholderText, setSearchText }) {
 
   const updateSearchInput = (value) => {
-      setSearchText(value)
+    setSearchText(value)
   }
   return (
     <div className={"inline-block " + styleClass}>

@@ -6,18 +6,18 @@ import AddLeadModalBody from '../features/leads/components/AddLeadModalBody'
 import ConfirmationModalBody from '../features/common/components/ConfirmationModalBody'
 
 
-function ModalLayout(){
+function ModalLayout() {
 
-    const {isOpen, bodyType, size, extraObject, title} = useSelector(state => state.modal)
+    const { isOpen, bodyType, size, extraObject, title } = useSelector(state => state.modal)
     const dispatch = useDispatch()
 
     const close = (e) => {
         dispatch(closeModal(e))
     }
 
-    return(
+    return (
         <>
-        {/* The button to open modal */}
+            {/* The button to open modal */}
 
             {/* Put this part before </body> tag */}
             <div className={`modal ${isOpen ? "modal-open" : ""}`}>
@@ -29,9 +29,9 @@ function ModalLayout(){
                     {/* Loading modal body according to different modal type */}
                     {
                         {
-                                [MODAL_BODY_TYPES.LEAD_ADD_NEW] : <AddLeadModalBody closeModal={close} extraObject={extraObject}/>,
-                                [MODAL_BODY_TYPES.CONFIRMATION] : <ConfirmationModalBody extraObject={extraObject} closeModal={close}/>,
-                                [MODAL_BODY_TYPES.DEFAULT] : <div></div>
+                            [MODAL_BODY_TYPES.LEAD_ADD_NEW]: <AddLeadModalBody closeModal={close} extraObject={extraObject} />,
+                            [MODAL_BODY_TYPES.CONFIRMATION]: <ConfirmationModalBody extraObject={extraObject} closeModal={close} />,
+                            [MODAL_BODY_TYPES.DEFAULT]: <div></div>
                         }[bodyType]
                     }
                 </div>

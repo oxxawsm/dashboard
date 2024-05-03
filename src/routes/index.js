@@ -43,7 +43,7 @@ const routes = [
     component: ProfileSettings,
   },
   {
-    path: '/settings-billing',
+    path: '/billing',
     component: Bills,
   },
   {

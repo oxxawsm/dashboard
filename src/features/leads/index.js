@@ -7,6 +7,9 @@ import { getLeadsContent } from "./leadSlice"
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil'
 import TrashIcon from '@heroicons/react/24/outline/TrashIcon'
 
+// здесь лучше использовать замоканные данные - например, какие то акции или проекты
+// название - ответственный - когда запущена - статус
+
 const TopSideButtons = () => {
 
     const dispatch = useDispatch()
