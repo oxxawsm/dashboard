@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const rightDrawerSlice = createSlice({
     name: 'rightDrawer',
     initialState: {
-        header: "",  // current  title state management
-        isOpen: false,   // right drawer state management for opening closing
-        bodyType: "",   // right drawer content management
+        header: "",
+        isOpen: false,
+        bodyType: "",
         extraObject: {},
     },
     reducers: {
@@ -18,7 +18,7 @@ export const rightDrawerSlice = createSlice({
             state.extraObject = extraObject
         },
 
-        closeRightDrawer: (state, action) => {
+        closeRightDrawer: (state) => {
             state.isOpen = false
             state.bodyType = ""
             state.header = ""

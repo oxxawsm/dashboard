@@ -1,10 +1,9 @@
-import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon'
 import { useDispatch, useSelector } from 'react-redux'
 import NotificationBodyRightDrawer from '../features/common/components/NotificationBodyRightDrawer'
 import { closeRightDrawer } from '../features/common/rightDrawerSlice'
 import { RIGHT_DRAWER_TYPES } from '../utils/globalConstantUtil'
 import CalendarEventsBodyRightDrawer from '../features/calendar/CalendarEventsBodyRightDrawer'
-
+import CloseIcon from '@mui/icons-material/Close';
 
 function RightSidebar() {
 
@@ -27,7 +26,7 @@ function RightSidebar() {
                     {/* Header */}
                     <div className="navbar   flex pl-4 pr-4   shadow-md ">
                         <button className="float-left btn btn-circle btn-outline btn-sm" onClick={() => close()}>
-                            <XMarkIcon className="h-5 w-5" />
+                            <CloseIcon className="h-5 w-5" />
                         </button>
                         <span className="ml-2 font-bold text-xl">{header}</span>
                     </div>

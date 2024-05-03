@@ -13,7 +13,6 @@ export const headerSlice = createSlice({
             state.pageTitle = action.payload.title
         },
 
-
         removeNotificationMessage: (state, action) => {
             state.newNotificationMessage = ""
         },

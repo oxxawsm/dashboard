@@ -5,7 +5,7 @@ import { themeChange } from 'theme-change'
 import checkAuth from './app/auth';
 import initializeApp from './app/init';
 
-const Layout = lazy(() => import('./containers/Layout'))
+const Layout = lazy(() => import('./components/Layout'))
 const Login = lazy(() => import('./pages/Login'))
 const ForgotPassword = lazy(() => import('./pages/ForgotPassword'))
 const Register = lazy(() => import('./pages/Register'))
@@ -31,7 +31,7 @@ function App() {
 
           <Route path="/app/*" element={<Layout />} />
 
-          <Route path="*" element={<Navigate to={token ? "/app/welcome" : "/login"} replace />} />
+          <Route path="*" element={<Navigate to={token ? "/app/dashboard" : "/login"} replace />} />
 
         </Routes>
       </Router>

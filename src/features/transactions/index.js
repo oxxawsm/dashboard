@@ -1,7 +1,7 @@
 import moment from "moment"
 import { useEffect, useState } from "react"
 import TitleCard from "../../components/Cards/TitleCard"
-import { RECENT_TRANSACTIONS } from "../../utils/dummyData"
+import { RECENT_TRANSACTIONS } from "../../utils/mockedData"
 import SearchBar from "../../components/Input/SearchBar"
 
 const TopSideButtons = ({ applySearch }) => {

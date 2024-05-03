@@ -2,12 +2,11 @@ import Header from "./Header"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import routes from '../routes'
 import { Suspense, lazy } from 'react'
-import SuspenseContent from "./SuspenseContent"
+import Loading from "./Loading"
 import { useSelector } from 'react-redux'
 import { useEffect, useRef } from "react"
 
 const Page404 = lazy(() => import('../pages/protected/404'))
-
 
 function PageContent() {
     const mainContentRef = useRef(null);
@@ -26,7 +25,7 @@ function PageContent() {
         <div className="drawer-content flex flex-col ">
             <Header />
             <main className="flex-1 overflow-y-auto md:pt-4 pt-4 px-6  bg-base-200" ref={mainContentRef}>
-                <Suspense fallback={<SuspenseContent />}>
+                <Suspense fallback={<Loading />}>
                     <Routes>
                         {
                             routes.map((route, key) => {
@@ -41,7 +40,6 @@ function PageContent() {
                             })
                         }
 
-                        {/* Redirecting unknown url to 404 page */}
                         <Route path="*" element={<Page404 />} />
                     </Routes>
                 </Suspense>
@@ -50,6 +48,5 @@ function PageContent() {
         </div>
     )
 }
-
 
 export default PageContent

@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux"
-import TitleCard from "../../../components/Cards/TitleCard"
-import { showNotification } from '../../common/headerSlice'
-import InputText from '../../../components/Input/InputText'
-import TextAreaInput from '../../../components/Input/TextAreaInput'
+import { useDispatch } from "react-redux"
+import TitleCard from "../../components/Cards/TitleCard"
+import { showNotification } from '../common/headerSlice'
+import InputText from '../../components/Input/InputText'
+import TextAreaInput from '../../components/Input/TextAreaInput'
 
 function ProfileSettings() {
 
