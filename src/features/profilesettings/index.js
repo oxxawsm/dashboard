@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux"
-import TitleCard from "../../components/Cards/TitleCard"
-import { showNotification } from '../common/headerSlice'
-import InputText from '../../components/Input/InputText'
-import TextAreaInput from '../../components/Input/TextAreaInput'
+import TitleCard from "../../common/Cards/TitleCard"
+import { showNotification } from '../../slices/headerSlice'
+import InputText from '../../common/Input/InputText'
+import TextAreaInput from '../../common/Input/TextAreaInput'
 
 function ProfileSettings() {
 
@@ -10,7 +10,7 @@ function ProfileSettings() {
 
     // Call API to update profile settings changes
     const updateProfile = () => {
-        dispatch(showNotification({ message: "Profile Updated", status: 1 }))
+        dispatch(showNotification({ message: "Данные обновлены", status: 1 }))
     }
 
     const updateFormValue = ({ updateType, value }) => {
@@ -19,15 +19,13 @@ function ProfileSettings() {
 
     return (
         <>
-
-            <TitleCard title="Profile Settings" topMargin="mt-2">
-
+            <TitleCard title="Настройки профиля" topMargin="mt-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <InputText labelTitle="Name" defaultValue="Elena" updateFormValue={updateFormValue} />
-                    <InputText labelTitle="Email Id" defaultValue="ellena.titenko@gmail.com" updateFormValue={updateFormValue} />
-                    <InputText labelTitle="Title" defaultValue="UI developer" updateFormValue={updateFormValue} />
-                    <InputText labelTitle="Place" defaultValue="Russia, Saint-Petersburg" updateFormValue={updateFormValue} />
-                    <TextAreaInput labelTitle="About" defaultValue="Junior UI developer" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Имя пользователя" defaultValue="Елена Титенко" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Email" defaultValue="ellena.titenko@gmail.com" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Должность" defaultValue="Frontend-разработчик" updateFormValue={updateFormValue} />
+                    <InputText labelTitle="Локация" defaultValue="Санкт-Петербург" updateFormValue={updateFormValue} />
+                    <TextAreaInput labelTitle="О себе" defaultValue="Frontend-разработчица и гитаристка" updateFormValue={updateFormValue} />
                 </div>
                 <div className="divider" ></div>
                 <div className="mt-16"><button className="btn btn-primary float-right" onClick={() => updateProfile()}>Update</button></div>

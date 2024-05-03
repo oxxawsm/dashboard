@@ -5,7 +5,7 @@ import { themeChange } from 'theme-change'
 import checkAuth from './app/auth';
 import initializeApp from './app/init';
 
-const Layout = lazy(() => import('./components/Layout'))
+const Layout = lazy(() => import('./common/Layout'))
 const Login = lazy(() => import('./pages/Login'))
 const ForgotPassword = lazy(() => import('./pages/ForgotPassword'))
 const Register = lazy(() => import('./pages/Register'))

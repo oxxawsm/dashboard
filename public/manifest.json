@@ -11,6 +11,16 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "profile.png",
+      "type": "image/png"
+    },
+    {
+      "src": "error-404.png"
+    },
+    {
+      "src": "sent-link.png"
     }
   ],
   "start_url": ".",

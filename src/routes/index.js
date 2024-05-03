@@ -1,15 +1,13 @@
 import { lazy } from 'react'
 
-const Dashboard = lazy(() => import('../pages/protected/Dashboard'))
-const Page404 = lazy(() => import('../pages/protected/404'))
-const Charts = lazy(() => import('../pages/protected/Charts'))
-const Leads = lazy(() => import('../pages/protected/Leads'))
-const Integration = lazy(() => import('../pages/protected/Integration'))
-const Calendar = lazy(() => import('../pages/protected/Calendar'))
-const Team = lazy(() => import('../pages/protected/Team'))
-const Transactions = lazy(() => import('../pages/protected/Transactions'))
-const Bills = lazy(() => import('../pages/protected/Bills'))
-const ProfileSettings = lazy(() => import('../pages/protected/ProfileSettings'))
+const Analytics = lazy(() => import('../pages/internalPages/Analytics'))
+const Page404 = lazy(() => import('../pages/internalPages/404'))
+const Dashboard = lazy(() => import('../pages/internalPages/Dashboard'))
+const Integration = lazy(() => import('../pages/internalPages/Integration'))
+const Team = lazy(() => import('../pages/internalPages/Team'))
+const Sales = lazy(() => import('../pages/internalPages/Sales'))
+const ProfileSettings = lazy(() => import('../pages/internalPages/ProfileSettings'))
+const TechMonitoring = lazy(() => import('../pages/internalPages/TechMonitoring'))
 
 
 const routes = [
@@ -18,36 +16,28 @@ const routes = [
     component: Dashboard,
   },
   {
-    path: '/leads',
-    component: Leads,
+    path: '/monitoring',
+    component: TechMonitoring,
   },
   {
     path: '/team',
     component: Team,
   },
   {
-    path: '/calendar',
-    component: Calendar,
-  },
-  {
-    path: '/transactions',
-    component: Transactions,
+    path: '/sales',
+    component: Sales,
   },
   {
     path: '/settings-profile',
     component: ProfileSettings,
   },
   {
-    path: '/billing',
-    component: Bills,
-  },
-  {
     path: '/integration',
     component: Integration,
   },
   {
-    path: '/charts',
-    component: Charts,
+    path: '/analytics',
+    component: Analytics,
   },
   {
     path: '/404',
@@ -55,4 +45,4 @@ const routes = [
   },
 ]
 
-export default routes
+export default routes;

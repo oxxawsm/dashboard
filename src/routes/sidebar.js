@@ -1,12 +1,9 @@
-/** Icons are imported separatly to reduce build time */
-import Squares2X2Icon from '@heroicons/react/24/outline/Squares2X2Icon'
-import WalletIcon from '@heroicons/react/24/outline/WalletIcon'
-import CalendarDaysIcon from '@heroicons/react/24/outline/CalendarDaysIcon'
-import BoltIcon from '@heroicons/react/24/outline/BoltIcon'
-import ChartBarIcon from '@heroicons/react/24/outline/ChartBarIcon'
-import CurrencyDollarIcon from '@heroicons/react/24/outline/CurrencyDollarIcon'
-import InboxArrowDownIcon from '@heroicons/react/24/outline/InboxArrowDownIcon'
-import UsersIcon from '@heroicons/react/24/outline/UsersIcon'
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
+import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
+import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 const iconClasses = `h-6 w-6`
 const submenuIconClasses = `h-5 w-5`
@@ -14,46 +11,34 @@ const submenuIconClasses = `h-5 w-5`
 const routes = [
   {
     path: '/app/dashboard',
-    icon: <Squares2X2Icon className={iconClasses} />,
+    icon: <SpaceDashboardIcon className={iconClasses} />,
     name: 'Главная',
   },
   {
-    path: '/app/charts',
-    icon: <ChartBarIcon className={iconClasses} />,
-    name: 'Аналитика',
+    path: '/app/analytics',
+    icon: <AutoGraphIcon className={iconClasses} />,
+    name: 'Сводка',
   },
   {
-    path: '/app/leads',
-    icon: <InboxArrowDownIcon className={iconClasses} />,
-    name: 'Проекты',
+    path: '/app/monitoring',
+    icon: <DisplaySettingsIcon className={iconClasses} />,
+    name: 'Технические отчёты',
   },
   {
     path: '/app/integration',
-    icon: <BoltIcon className={iconClasses} />,
+    icon: <AdsClickIcon className={iconClasses} />,
     name: 'Интеграции',
   },
   {
-    path: '/app/transactions',
-    icon: <CurrencyDollarIcon className={iconClasses} />,
-    name: 'Транзакции',
-  },
-  {
-    path: '/app/billing',
-    icon: <WalletIcon className={submenuIconClasses} />,
-    name: 'Биллинг',
-  },
-  {
-    path: '/app/calendar',
-    icon: <CalendarDaysIcon className={iconClasses} />,
-    name: 'Календарь',
+    path: '/app/sales',
+    icon: <CurrencyRubleIcon className={iconClasses} />,
+    name: 'Продажи',
   },
   {
     path: '/app/team',
-    icon: <UsersIcon className={submenuIconClasses} />,
+    icon: <Diversity3Icon className={submenuIconClasses} />,
     name: 'Команда',
   },
 ]
 
-export default routes
-
-
+export default routes;
