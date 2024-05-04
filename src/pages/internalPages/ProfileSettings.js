@@ -7,7 +7,7 @@ function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title: 'Settings' }))
+        dispatch(setPageTitle({ title: 'Настройки профиля' }))
     }, [])
 
 
@@ -16,4 +16,4 @@ function InternalPage() {
     )
 }
 
-export default InternalPage
+export default InternalPage;

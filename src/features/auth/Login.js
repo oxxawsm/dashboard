@@ -21,8 +21,8 @@ function Login() {
         if (loginObj.email.trim() === '' || loginObj.password.trim() === '') return setErrorMessage('Неправильный Email или пароль')
         else {
             setLoading(true)
-            // Call API to check user credentials and save token in localstorage
             localStorage.setItem('token', 'loginToken')
+            localStorage.setItem('theme', 'dark')
             setLoading(false)
             window.location.href = '/app/dashboard'
         }
@@ -68,7 +68,7 @@ function Login() {
                         </div>
 
                         <ErrorText styleClass='mt-8'>{errorMessage}</ErrorText>
-                        <button type='submit' className={'btn mt-2 w-full bg-violet-300 dark:bg-violet-700 hover:bg-violet-400' + (loading ? ' loading' : '')}>
+                        <button type='submit' className={'btn mt-2 w-full bg-violet-300 dark:bg-violet-700 hover:bg-violet-400 text-black' + (loading ? ' loading' : '')}>
                             Вход
                         </button>
 
