@@ -31,17 +31,17 @@ function SubsRevenue() {
       {
         label: 'Премиум',
         data: labels.map(() => { return Math.random() * 100000 + 1000 }),
-        backgroundColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: '#4e8098',
       },
       {
         label: 'Для профи',
         data: labels.map(() => { return Math.random() * 50000 + 700 }),
-        backgroundColor: 'rgba(53, 162, 235, 1)',
+        backgroundColor: '#90c2e7',
       },
       {
         label: 'Корпоративная',
         data: labels.map(() => { return Math.random() * 100000 + 2900 }),
-        backgroundColor: 'rgba(53, 162, 235, 1)',
+        backgroundColor: '#ced3dc',
       },
     ],
   };
@@ -50,7 +50,6 @@ function SubsRevenue() {
     <TitleCard title={'Доходность по типу подписок'}>
       <Bar options={options} data={data} />
     </TitleCard>
-
   )
 }
 

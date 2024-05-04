@@ -19,10 +19,10 @@ function Header() {
     useEffect(() => {
         themeChange(false)
         if (currentTheme === null) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                setCurrentTheme('light')
-            } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 setCurrentTheme('dark')
+            } else {
+                setCurrentTheme('light')
             }
         }
     }, [])
@@ -62,7 +62,7 @@ function Header() {
 
                     <div className='dropdown dropdown-end ml-4'>
                         <label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
-                            <div className='w-10 rounded-full'>
+                            <div className='w-10 mask mask-squircle'>
                                 <img src='/profile.png' alt='profile' />
                             </div>
                         </label>

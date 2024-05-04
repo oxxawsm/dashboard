@@ -1,18 +1,12 @@
-import moment from 'moment';
-import { useState } from 'react';
 import TitleCard from '../Cards/TitleCard';
 import { PAGES_VISITS } from '../../utils/mockedData'
 
 function VisitsTable() {
 
-  const [visits] = useState(PAGES_VISITS)
-
   return (
       <>
 
           <TitleCard title='Просмотры' topMargin='mt-2'>
-
-              {/* Team Member list in table format loaded constant */}
               <div className='overflow-x-auto w-full'>
                   <table className='table w-full'>
                       <thead>
@@ -23,17 +17,17 @@ function VisitsTable() {
                       </thead>
                       <tbody>
                           {
-                              visits.map((l, k) => {
+                              PAGES_VISITS.map((label, key) => {
                                   return (
-                                      <tr key={k}>
+                                      <tr key={key}>
                                           <td>
                                               <div className='flex items-center space-x-3'>
                                                   <div>
-                                                      <div className='font-bold'>{l.address}</div>
+                                                      <div className='font-bold'>{label.address}</div>
                                                   </div>
                                               </div>
                                           </td>
-                                          <td>{l.views}</td>
+                                          <td>{label.views}</td>
                                       </tr>
                                   )
                               })

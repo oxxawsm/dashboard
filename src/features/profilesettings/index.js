@@ -8,12 +8,11 @@ function ProfileSettings() {
 
     const dispatch = useDispatch()
 
-    // Call API to update profile settings changes
     const updateProfile = () => {
         dispatch(showNotification({ message: 'Данные обновлены', status: 1 }))
     }
 
-    const updateFormValue = ({ updateType, value }) => {
+    const updateFormValue = ({ updateType }) => {
         console.log(updateType)
     }
 
@@ -28,7 +27,7 @@ function ProfileSettings() {
                     <TextAreaInput labelTitle='О себе' defaultValue='Frontend-разработчица и гитаристка' updateFormValue={updateFormValue} />
                 </div>
                 <div className='divider' ></div>
-                <div className='mt-16'><button className='btn btn-primary float-right' onClick={() => updateProfile()}>Update</button></div>
+                <div className='mt-16'><button className='btn bg-violet-300 dark:bg-violet-700 hover:bg-violet-400 float-right' onClick={() => updateProfile()}>Обновить профиль</button></div>
             </TitleCard>
         </>
     )

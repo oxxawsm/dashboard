@@ -61,21 +61,21 @@ function Login() {
 
                         <div className='text-right text-primary'>
                             <Link to='/forgot-password'>
-                                <span className='text-sm  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200'>
+                                <span className='text-sm inline-block text-violet-400 hover:underline hover:cursor-pointer transition duration-200'>
                                     Забыли пароль?
                                 </span>
                             </Link>
                         </div>
 
                         <ErrorText styleClass='mt-8'>{errorMessage}</ErrorText>
-                        <button type='submit' className={'btn mt-2 w-full btn-primary' + (loading ? ' loading' : '')}>
+                        <button type='submit' className={'btn mt-2 w-full bg-violet-300 dark:bg-violet-700 hover:bg-violet-400' + (loading ? ' loading' : '')}>
                             Вход
                         </button>
 
                         <div className='text-center mt-4'>
                             Ещё нет аккаунта?
                             <Link to='/register'>
-                                <span style={{ paddingLeft: '8px' }} className='inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200'>
+                                <span style={{ paddingLeft: '8px' }} className='inline-block hover:text-violet-400 hover:underline hover:cursor-pointer transition duration-200'>
                                     Зарегистрироваться
                                 </span>
                             </Link>

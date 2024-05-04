@@ -43,7 +43,7 @@ function ForgotPassword() {
                         <>
                             <div className='text-center mt-8'><img className='inline-block w-24 text-success' src='https://cdn.onlinewebfonts.com/svg/img_516697.png' /></div>
                             <p className='mt-4 mb-10 font-semibold text-center'>Отправили ссылку для сброса пароля, проверьте свою почту</p>
-                            <div className='text-center mt-4'><Link to='/login'><button className='btn btn-block btn-primary '>Вход</button></Link></div>
+                            <div className='text-center mt-4'><Link to='/login'><button className='btn btn-block bg-violet-300 dark:bg-violet-700 hover:bg-violet-400'>Вход</button></Link></div>
 
                         </>
                     }
@@ -69,7 +69,7 @@ function ForgotPassword() {
                                 <ErrorText styleClass='mt-12'>{errorMessage}</ErrorText>
                                 <button
                                     type='submit'
-                                    className={'btn mt-2 w-full btn-primary' + (loading ? ' loading' : '')}
+                                    className={'btn mt-2 w-full bg-violet-300 dark:bg-violet-700 hover:bg-violet-400' + (loading ? ' loading' : '')}
                                 >
                                     Сбросить пароль
                                 </button>

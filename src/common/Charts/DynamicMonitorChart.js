@@ -27,8 +27,8 @@ const DynamicLineChart = () => {
             {
                 label: 'Миллисекунды (мс)',
                 data: initialData.data.reverse(),  // Реверс массива данных
-                borderColor: 'rgb(75, 192, 192)',
-                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                borderColor: 'rgb(124 58 237)',
+                backgroundColor: 'rgba(167, 139, 250, 0.5)',
             }
         ],
     });

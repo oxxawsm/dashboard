@@ -1,33 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    header: '',
+    isOpen: false,
+    bodyType: '',
+    extraObject: {},
+};
 
 export const rightDrawerSlice = createSlice({
     name: 'rightDrawer',
-    initialState: {
-        header: '',
-        isOpen: false,
-        bodyType: '',
-        extraObject: {},
-    },
+    initialState,
     reducers: {
-
-        openRightDrawer: (state, action) => {
-            const { header, bodyType, extraObject } = action.payload
-            state.isOpen = true
-            state.bodyType = bodyType
-            state.header = header
-            state.extraObject = extraObject
+        openRightDrawer: (state, { payload }) => {
+            const { header, bodyType, extraObject } = payload;
+            state.isOpen = true;
+            state.header = header;
+            state.bodyType = bodyType;
+            state.extraObject = extraObject;
         },
-
         closeRightDrawer: (state) => {
-            state.isOpen = false
-            state.bodyType = ''
-            state.header = ''
-            state.extraObject = {}
+            return {
+                ...initialState,
+                isOpen: false
+            };
         },
-
     }
-})
+});
 
-export const { openRightDrawer, closeRightDrawer } = rightDrawerSlice.actions
+export const { openRightDrawer, closeRightDrawer } = rightDrawerSlice.actions;
 
-export default rightDrawerSlice.reducer
+export default rightDrawerSlice.reducer;

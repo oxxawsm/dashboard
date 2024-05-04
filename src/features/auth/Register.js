@@ -53,9 +53,9 @@ function Register() {
                         </div>
 
                         <ErrorText styleClass='mt-8'>{errorMessage}</ErrorText>
-                        <button type='submit' className={'btn mt-2 w-full btn-primary' + (loading ? ' loading' : '')}>Зарегистрироваться</button>
+                        <button type='submit' className={'btn mt-2 w-full bg-violet-300 dark:bg-violet-700 hover:bg-violet-400' + (loading ? ' loading' : '')}>Зарегистрироваться</button>
 
-                        <div className='text-center mt-4'>Уже есть аккаунт? <Link to='/login'><span className='  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200'>Вход</span></Link></div>
+                        <div className='text-center mt-4'>Уже есть аккаунт? <Link to='/login'><span className='  inline-block  hover:text-violet-400 hover:underline hover:cursor-pointer transition duration-200'>Вход</span></Link></div>
                     </form>
                 </div>
             </div>

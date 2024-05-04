@@ -19,7 +19,6 @@ function Dashboard() {
     });
 
     const handleDatePickerValueChange = (newValue) => {
-        console.log('newValue:', newValue);
         setDateValue(newValue);
     }
 

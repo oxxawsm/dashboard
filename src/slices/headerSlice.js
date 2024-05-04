@@ -1,29 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    pageTitle: 'Home',
+    noOfNotifications: 3,
+    newNotificationMessage: '',
+    newNotificationStatus: 1,
+};
 
 export const headerSlice = createSlice({
     name: 'header',
-    initialState: {
-        pageTitle: 'Home',
-        noOfNotifications: 3,
-        newNotificationMessage: '',
-        newNotificationStatus: 1,
-    },
+    initialState,
     reducers: {
-        setPageTitle: (state, action) => {
-            state.pageTitle = action.payload.title
+        setPageTitle: (state, { payload }) => {
+            state.pageTitle = payload.title;
         },
-
-        removeNotificationMessage: (state, action) => {
-            state.newNotificationMessage = ''
+        removeNotificationMessage: (state) => {
+            state.newNotificationMessage = '';
         },
-
-        showNotification: (state, action) => {
-            state.newNotificationMessage = action.payload.message
-            state.newNotificationStatus = action.payload.status
+        showNotification: (state, { payload }) => {
+            state.newNotificationMessage = payload.message;
+            state.newNotificationStatus = payload.status;
         },
     }
-})
+});
 
-export const { setPageTitle, removeNotificationMessage, showNotification } = headerSlice.actions
+export const { 
+    setPageTitle,
+    removeNotificationMessage,
+    showNotification
+} = headerSlice.actions;
 
-export default headerSlice.reducer
+export default headerSlice.reducer;

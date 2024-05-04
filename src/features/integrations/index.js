@@ -20,7 +20,7 @@ function Integrations() {
                             <tr>
                                 <th>Счёт</th>
                                 <th>Дата выставления счёта</th>
-                                <th>Описание</th>
+                                <th>Партнёр</th>
                                 <th>Сумма</th>
                                 <th>Статус</th>
                                 <th>Дата оплаты</th>
@@ -34,7 +34,7 @@ function Integrations() {
                                             <td>{l.accountNum}</td>
                                             <td>{l.generatedOn}</td>
                                             <td>{l.description}</td>
-                                            <td>${l.amount}</td>
+                                            <td>{l.amount} ₽</td>
                                             <td>{getPaymentStatus(l.status)}</td>
                                             <td>{l.date}</td>
                                         </tr>

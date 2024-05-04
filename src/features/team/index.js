@@ -35,8 +35,8 @@ function Team() {
     }, [])
 
     const getPersonRole = (index) => {
-        if (index % 5 === 0) return <div className='badge badge-secondary'>Владелец</div>
-        else if (index % 5 === 1) return <div className='badge badge-secondary'>Админ</div>
+        if (index % 5 === 0) return <div className='badge bg-violet-300 dark:bg-violet-700'>Владелец</div>
+        else if (index % 5 === 1) return <div className='badge bg-rose-200 dark:bg-rose-600'>Админ</div>
         else if (index % 5 === 2) return <div className='badge badge-primary'>Менеджер</div>
         else return <div className='badge badge-accent'>Поддержка</div>
     }
@@ -64,26 +64,36 @@ function Team() {
                         </thead>
                         <tbody>
                             {
-                                team.map((l, k) => {
+                                team.map((label, key) => {
                                     return (
-                                        <tr key={k}>
+                                        <tr key={key}>
                                             <td>
                                                 <div className='flex items-center space-x-3'>
                                                     <div className='avatar'>
                                                         <div className='mask mask-squircle w-12 h-12'>
-                                                            <img src={l.avatar} alt='Avatar' />
+                                                            <img src={label.avatar} alt='Avatar' />
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div className='font-bold'>{l.first_name}</div>
-                                                        <div className='text-sm opacity-50'>{l.last_name}</div>
+                                                        <div className='font-bold'>{label.first_name}</div>
+                                                        <div className='text-sm opacity-50'>{label.last_name}</div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>{l.email}</td>
-                                            <td>{getPersonRole(k)}</td>
-                                            <td>{moment(new Date()).add(-5 * (k + 2), 'days').format('DD MMM YY')}</td>
-                                            <td><button className='btn btn-square btn-ghost' onClick={() => deleteCurrentTeamMember(k)}><DeleteForeverIcon className='w-5' /></button></td>
+                                            <td>{label.email}</td>
+                                            <td>
+                                                {label.role
+                                                    ? <div className={`badge badge-primary`}>
+                                                        {label.role}
+                                                    </div>
+                                                    : getPersonRole(key)}
+                                            </td>
+                                            <td>{moment(new Date()).subtract(15 * (key + 1), 'minutes').fromNow()}</td>
+                                            <td>
+                                                <button className='btn btn-square btn-ghost' onClick={() => deleteCurrentTeamMember(key)}>
+                                                    <DeleteForeverIcon className='w-5' />
+                                                </button>
+                                            </td>
                                         </tr>
                                     )
                                 })

@@ -33,14 +33,14 @@ function DevicesChart() {
         label: 'Количество пользователей',
         data: [786, 347, 115],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.8)',
-          'rgba(54, 162, 235, 0.8)',
-          'rgba(255, 206, 86, 0.8)',
+          '#8e9aaf',
+          '#1f7a8c',
+          '#efd3d7',
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
+          '#8e9aaf',
+          '#1f7a8c',
+          '#efd3d7',
         ],
         borderWidth: 1,
       }

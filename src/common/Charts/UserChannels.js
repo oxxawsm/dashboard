@@ -1,14 +1,5 @@
-import TitleCard from '../Cards/TitleCard'
-
-const userSourceData = [
-    { source: 'Яндекс Директ', count: '26,345', conversionPercent: 10.2 },
-    { source: 'Sber Ads', count: '21,341', conversionPercent: 11.7 },
-    { source: 'Telegram Ads', count: '34,379', conversionPercent: 12.4 },
-    { source: 'YouTube', count: '12,359', conversionPercent: 20.9 },
-    { source: 'VK', count: '10,345', conversionPercent: 10.3 },
-    { source: 'Дзен', count: '7,938', conversionPercent: 10.3 },
-    { source: 'Пикабу', count: '7,938', conversionPercent: 10.3 },
-]
+import TitleCard from '../Cards/TitleCard';
+import { USERS_SOURCE_DATA } from '../../utils/mockedData';
 
 function UserChannels() {
     return (
@@ -25,7 +16,7 @@ function UserChannels() {
                     </thead>
                     <tbody>
                         {
-                            userSourceData.map((user, key) => {
+                            USERS_SOURCE_DATA.map((user, key) => {
                                 return (
                                     <tr key={key}>
                                         <th>{key + 1}</th>

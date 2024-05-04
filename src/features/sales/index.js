@@ -14,17 +14,22 @@ const TopSideButtons = ({ applySearch }) => {
 
     return (
         <div className='inline-block float-right'>
-            <SearchBar searchText={searchText} styleClass='mr-2 w-72' setSearchText={setSearchText} />
+            <SearchBar searchText={searchText} styleClass='mr-2 w-54' setSearchText={setSearchText} />
         </div>
     )
 }
 
 function Sales() {
-    const [trans, setTrans] = useState(PAYMENTS)
+    const [payments, setPayments] = useState(PAYMENTS)
 
     const applySearch = (value) => {
-        let filteredTransactions = PAYMENTS.filter((t) => { return t.email.toLowerCase().includes(value.toLowerCase()) || t.email.toLowerCase().includes(value.toLowerCase()) })
-        setTrans(filteredTransactions)
+        let filteredTransactions = PAYMENTS.filter((payment) => {
+            return payment.subscription.toLowerCase().includes(value.toLowerCase())
+                || payment.email.toLowerCase().includes(value.toLowerCase())
+                || payment.location.toLowerCase().includes(value.toLowerCase())
+                || payment.userId.includes(value)
+        })
+        setPayments(filteredTransactions)
     }
 
     return (
@@ -35,6 +40,7 @@ function Sales() {
                     <table className='table w-full'>
                         <thead>
                             <tr>
+                                <th>userId</th>
                                 <th>Email</th>
                                 <th>Локация</th>
                                 <th>Подписка</th>
@@ -44,14 +50,15 @@ function Sales() {
                         </thead>
                         <tbody>
                             {
-                                trans.map((l, k) => {
+                                payments.map((label, key) => {
                                     return (
-                                        <tr key={k}>
-                                            <td>{l.email}</td>
-                                            <td>{l.location}</td>
-                                            <td>{l.subscription}</td>
-                                            <td>${l.amount}</td>
-                                            <td>{moment(l.date).format('D MMM')}</td>
+                                        <tr key={key}>
+                                            <td>{label.userId}</td>
+                                            <td>{label.email}</td>
+                                            <td>{label.location}</td>
+                                            <td>{label.subscription}</td>
+                                            <td>{label.amount} ₽</td>
+                                            <td>{moment(label.date).format('D MMM')}</td>
                                         </tr>
                                     )
                                 })
@@ -63,6 +70,5 @@ function Sales() {
         </>
     )
 }
-
 
 export default Sales;

@@ -1,12 +1,11 @@
 import DynamicMonitorChart from '../../common/Charts/DynamicMonitorChart';
 import DashboardStats from '../analytics/components/Statistics';
+import { ERRORS_DATA } from '../../utils/mockedData';
+import { useState } from 'react';
 
 function TechMonitoring() {
 
-    const errorsData = [
-        { title: 'Ошибки', value: '114', description: '↙ 18%' },
-        { title: 'Краши', value: '385', description: '↙ 6%' },
-    ]
+    const [errorsData] = useState(ERRORS_DATA);
 
     return (
         <>
@@ -19,7 +18,9 @@ function TechMonitoring() {
                     })
                 }
             </div>
-            <DynamicMonitorChart />
+            <div className='mt-4'>
+                <DynamicMonitorChart />
+            </div>
         </>
     )
 }

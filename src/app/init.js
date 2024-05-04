@@ -13,8 +13,6 @@ const initializeApp = () => {
         // Prod build code
         // Removing console.log from prod
         console.log = () => { };
-
-        // init analytics here
     }
 
 }
