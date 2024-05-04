@@ -8,7 +8,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import TitleCard from '../../../common/Cards/TitleCard';
+import TitleCard from '../Cards/TitleCard';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -47,7 +47,7 @@ function SubsRevenue() {
   };
 
   return (
-    <TitleCard title={"Доходность по типу подписок"}>
+    <TitleCard title={'Доходность по типу подписок'}>
       <Bar options={options} data={data} />
     </TitleCard>
 

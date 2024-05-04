@@ -8,7 +8,7 @@ function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title: "Интеграции" }))
+        dispatch(setPageTitle({ title: 'Интеграции' }))
     }, [])
 
     return (

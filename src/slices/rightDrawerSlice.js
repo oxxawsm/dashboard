@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const rightDrawerSlice = createSlice({
     name: 'rightDrawer',
     initialState: {
-        header: "",
+        header: '',
         isOpen: false,
-        bodyType: "",
+        bodyType: '',
         extraObject: {},
     },
     reducers: {
@@ -20,8 +20,8 @@ export const rightDrawerSlice = createSlice({
 
         closeRightDrawer: (state) => {
             state.isOpen = false
-            state.bodyType = ""
-            state.header = ""
+            state.bodyType = ''
+            state.header = ''
             state.extraObject = {}
         },
 

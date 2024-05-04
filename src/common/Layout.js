@@ -1,12 +1,12 @@
-import PageContent from "./PageContent"
-import LeftSidebar from "./LeftSidebar"
+import PageContent from './PageContent'
+import LeftSidebar from './LeftSidebar'
 import { useSelector, useDispatch } from 'react-redux'
 import RightSidebar from './RightSidebar'
-import { useEffect } from "react"
-import { removeNotificationMessage } from "../slices/headerSlice"
+import { useEffect } from 'react'
+import { removeNotificationMessage } from '../slices/headerSlice'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import ModalLayout from "./ModalLayout"
+import ModalLayout from './ModalLayout'
 
 function Layout() {
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ function Layout() {
 
 
   useEffect(() => {
-    if (newNotificationMessage !== "") {
+    if (newNotificationMessage !== '') {
       if (newNotificationStatus === 1) NotificationManager.success(newNotificationMessage, 'Success')
       if (newNotificationStatus === 0) NotificationManager.error(newNotificationMessage, 'Error')
       dispatch(removeNotificationMessage())
@@ -24,8 +24,8 @@ function Layout() {
   return (
     <>
       { /* Left drawer - containing page content and side bar (always open) */}
-      <div className="drawer  lg:drawer-open">
-        <input id="left-sidebar-drawer" type="checkbox" className="drawer-toggle" />
+      <div className='drawer  lg:drawer-open'>
+        <input id='left-sidebar' type='checkbox' className='drawer-toggle' />
         <PageContent />
         <LeftSidebar />
       </div>

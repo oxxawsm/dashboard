@@ -3,7 +3,7 @@ import Register from '../features/auth/Register'
 function ExternalPage() {
 
     return (
-        <div className="">
+        <div className=''>
             <Register />
         </div>
     )

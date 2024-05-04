@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const headerSlice = createSlice({
     name: 'header',
     initialState: {
-        pageTitle: "Home",
+        pageTitle: 'Home',
         noOfNotifications: 3,
-        newNotificationMessage: "",
+        newNotificationMessage: '',
         newNotificationStatus: 1,
     },
     reducers: {
@@ -14,7 +14,7 @@ export const headerSlice = createSlice({
         },
 
         removeNotificationMessage: (state, action) => {
-            state.newNotificationMessage = ""
+            state.newNotificationMessage = ''
         },
 
         showNotification: (state, action) => {

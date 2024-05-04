@@ -13,7 +13,7 @@ function ConfirmationModal({ extraObject, closeModal }) {
     const proceedWithYes = async () => {
         if (type === CONFIRMATION_MODAL_CLOSE_TYPES.DELETE_TEAM_MEMBER) {
             dispatch(deleteTeamMember({ index }))
-            dispatch(showNotification({ message: "Сотрудник удалён из списка", status: 1 }))
+            dispatch(showNotification({ message: 'Сотрудник удалён из списка', status: 1 }))
         }
         closeModal()
     }
@@ -24,12 +24,9 @@ function ConfirmationModal({ extraObject, closeModal }) {
                 {message}
             </p>
 
-            <div className="modal-action mt-12">
-
-                <button className="btn btn-outline   " onClick={() => closeModal()}>Отмена</button>
-
-                <button className="btn btn-primary w-36" onClick={() => proceedWithYes()}>Да</button>
-
+            <div className='modal-action mt-12 justify-center'>
+                <button className='btn btn-outline w-24' onClick={() => closeModal()}>Отмена</button>
+                <button className='btn bg-violet-300 dark:bg-violet-700 w-24' onClick={() => proceedWithYes()}>Да</button>
             </div>
         </>
     )

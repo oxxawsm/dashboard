@@ -10,7 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import TitleCard from '../../../common/Cards/TitleCard';
+import TitleCard from '../Cards/TitleCard';
 
 ChartJS.register(
   CategoryScale,
@@ -43,15 +43,15 @@ function MonthActivity() {
         fill: true,
         label: 'Количество пользователей',
         data: labels.map(() => { return Math.random() * 100 + 500 }),
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: 'rgb(124 58 237)',
+        backgroundColor: 'rgba(167, 139, 250, 0.5)',
       },
     ],
   };
 
 
   return (
-    <TitleCard title={"Активность за месяц"}>
+    <TitleCard title={'Активность за месяц'}>
       <Line data={data} options={options} />
     </TitleCard>
   )

@@ -3,7 +3,7 @@ import Login from '../features/auth/Login'
 function ExternalPage() {
 
     return (
-        <div className="">
+        <div className=''>
             <Login />
         </div>
     )

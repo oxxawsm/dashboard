@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const modalSlice = createSlice({
     name: 'modal',
     initialState: {
-        title: "",
+        title: '',
         isOpen: false,
-        bodyType: "",
-        size: "",
+        bodyType: '',
+        size: '',
         extraObject: {},
     },
     reducers: {
@@ -20,8 +20,8 @@ export const modalSlice = createSlice({
         },
         closeModal: (state) => {
             state.isOpen = false
-            state.bodyType = ""
-            state.title = ""
+            state.bodyType = ''
+            state.title = ''
             state.extraObject = {}
         },
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TitleCard from '../../../common/Cards/TitleCard';
+import TitleCard from '../Cards/TitleCard';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 
@@ -59,7 +59,7 @@ const DynamicLineChart = () => {
     }, [chartData]);
 
     return (
-        <TitleCard title={"Время ответа сервиса"}>
+        <TitleCard title={'Время ответа сервиса'}>
             <Line data={chartData} />
         </TitleCard>
     );

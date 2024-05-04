@@ -1,7 +1,7 @@
-import moment from "moment";
-import { useState } from "react";
-import TitleCard from "../../../common/Cards/TitleCard";
-import { PAGES_VISITS } from '../../../utils/mockedData'
+import moment from 'moment';
+import { useState } from 'react';
+import TitleCard from '../Cards/TitleCard';
+import { PAGES_VISITS } from '../../utils/mockedData'
 
 function VisitsTable() {
 
@@ -10,11 +10,11 @@ function VisitsTable() {
   return (
       <>
 
-          <TitleCard title="Просмотры" topMargin="mt-2">
+          <TitleCard title='Просмотры' topMargin='mt-2'>
 
               {/* Team Member list in table format loaded constant */}
-              <div className="overflow-x-auto w-full">
-                  <table className="table w-full">
+              <div className='overflow-x-auto w-full'>
+                  <table className='table w-full'>
                       <thead>
                           <tr>
                               <th>Адрес страницы</th>
@@ -27,9 +27,9 @@ function VisitsTable() {
                                   return (
                                       <tr key={k}>
                                           <td>
-                                              <div className="flex items-center space-x-3">
+                                              <div className='flex items-center space-x-3'>
                                                   <div>
-                                                      <div className="font-bold">{l.address}</div>
+                                                      <div className='font-bold'>{l.address}</div>
                                                   </div>
                                               </div>
                                           </td>

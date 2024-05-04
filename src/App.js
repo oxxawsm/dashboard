@@ -25,13 +25,13 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/register" element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route path='/register' element={<Register />} />
 
-          <Route path="/app/*" element={<Layout />} />
+          <Route path='/app/*' element={<Layout />} />
 
-          <Route path="*" element={<Navigate to={token ? "/app/dashboard" : "/login"} replace />} />
+          <Route path='*' element={<Navigate to={token ? '/app/dashboard' : '/login'} replace />} />
 
         </Routes>
       </Router>

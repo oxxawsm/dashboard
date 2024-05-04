@@ -2,19 +2,18 @@ import {
   Chart as ChartJS,
   Filler,
   ArcElement,
-  Title,
   Tooltip,
   Legend,
 } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import TitleCard from '../../../common/Cards/TitleCard';
+import TitleCard from '../Cards/TitleCard';
 
 ChartJS.register(ArcElement, Tooltip, Legend,
   Tooltip,
   Filler,
   Legend);
 
-function VisitGeoChart() {
+function SubsGeoChart() {
 
   const options = {
     responsive: true,
@@ -32,7 +31,7 @@ function VisitGeoChart() {
     datasets: [
       {
         label: 'Количество покупок',
-        data: [764, 219, 30, 51, 82, 16],
+        data: [300, 219, 30, 51, 82, 16],
         backgroundColor: [
           'rgba(255, 99, 255, 0.8)',
           'rgba(54, 162, 235, 0.8)',
@@ -55,11 +54,10 @@ function VisitGeoChart() {
   };
 
   return (
-    <TitleCard title={"География визитов"}>
+    <TitleCard title={'География подписок'}>
       <Pie options={options} data={data} />
     </TitleCard>
   )
 }
 
-
-export default VisitGeoChart;
+export default SubsGeoChart;
