@@ -7,6 +7,8 @@ import store from './app/store'
 import { Provider } from 'react-redux'
 import Loading from './common/Loading';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { initializeApp } from "firebase/app";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,43 +23,33 @@ root.render(
 
 serviceWorkerRegistration.register(); // Регистрация Service Worker'а
 
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-  window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
+const tokenString = document.getElementById("token");
 
-      const deferredPrompt = e;
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyBzoeeiWQ8Qu9XxJdc4V1fvu1RO7VDI4xs",
+  authDomain: "oxxawsm-dashboard.firebaseapp.com",
+  projectId: "oxxawsm-dashboard",
+  storageBucket: "oxxawsm-dashboard.appspot.com",
+  messagingSenderId: "809122524558",
+  appId: "1:809122524558:web:be31539cc4dd104e1308df",
+  measurementId: "G-1S40ERNJK7"
+});
 
-      const installButton = document.createElement('button');
-      installButton.textContent = 'Install App';
-      installButton.style.position = 'fixed';
-      installButton.style.top = '10px';
-      installButton.style.left = '50%';
-      installButton.style.transform = 'translateX(-50%)';
-      installButton.style.zIndex = '9999';
-      installButton.style.padding = '10px 20px';
-      installButton.classList.add('btn-grad');
-      installButton.style.color = 'white';
-      installButton.style.border = 'none';
-      installButton.style.borderRadius = '5px';
-      installButton.style.cursor = 'pointer';
+const messaging = getMessaging(firebaseApp);
 
-      installButton.addEventListener('click', () => {
+getToken(messaging)
+  .then((currentToken) => {
+    if (currentToken) {
+      tokenString.innerHTML = 'Token is ' + currentToken;
+    }
+  })
+  .catch(err => {
+    console.log('unable to get permission', err)
+  })
 
-          deferredPrompt.prompt();
-
-          deferredPrompt.userChoice.then(choiceResult => {
-              if (choiceResult.outcome === 'accepted') {
-                  console.log('App installed');
-              } else {
-                  console.log('App installation declined');
-              }
-
-              installButton.style.display = 'none';
-          });
-      });
-
-      document.body.appendChild(installButton);
-  });
-}
+onMessage(payload => {
+  console.log("Message received. ", payload);
+  const { title, ...options } = payload.notification;
+});
 
 reportWebVitals();
