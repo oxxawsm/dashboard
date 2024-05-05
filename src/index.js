@@ -19,16 +19,33 @@ root.render(
   // </React.StrictMode>
 );
 
-function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js', { scope: '.' }).then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-    }
+serviceWorkerRegistration.register(); // Регистрация Service Worker'а
+
+let installPrompt = null;
+const installButton = document.querySelector("#install");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  installButton.removeAttribute("hidden");
+});
+
+installButton.addEventListener("click", async () => {
+  if (!installPrompt) {
+    return;
+  }
+  const result = await installPrompt.prompt();
+  console.log(`Install prompt was: ${result.outcome}`);
+  disableInAppInstallPrompt();
+});
+
+function disableInAppInstallPrompt() {
+  installPrompt = null;
+  installButton.setAttribute("hidden", "");
 }
 
-serviceWorkerRegistration.register();
+window.addEventListener("appinstalled", () => {
+  disableInAppInstallPrompt();
+});
 
 reportWebVitals();

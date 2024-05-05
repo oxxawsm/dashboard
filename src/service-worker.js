@@ -49,17 +49,17 @@ self.addEventListener('message', (event) => {
 
 // Any other custom service worker logic can go here.
 
-const cacheName = "pwa-share-api";
+const cacheName = "pwa-chache";
 const filesToCache = [
   "/src",
   "/public"
 ];
 
 self.addEventListener("install", e => {
-  console.log("[ServiceWorker**] - Install");
+  console.log("[ServiceWorker] - Установка");
   e.waitUntil(
     caches.open(cacheName).then(cache => {
-      console.log("[ServiceWorker**] - Caching app shell");
+      console.log("[ServiceWorker] - Кэширование");
       return cache.addAll(filesToCache);
     })
   );
@@ -70,7 +70,7 @@ self.addEventListener("activate", event => {
     return Promise.all(
       keyList.map(key => {
         if (key !== cacheName) {
-          console.log("[ServiceWorker] - Removing old cache", key);
+          console.log("[ServiceWorker] - Удаление старого кэша", key);
           return caches.delete(key);
         }
       })
