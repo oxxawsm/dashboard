@@ -7,8 +7,6 @@ import store from './app/store'
 import { Provider } from 'react-redux'
 import Loading from './common/Loading';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { initializeApp } from "firebase/app";
-import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
