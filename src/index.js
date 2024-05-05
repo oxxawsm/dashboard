@@ -21,31 +21,43 @@ root.render(
 
 serviceWorkerRegistration.register(); // Регистрация Service Worker'а
 
-let installPrompt = null;
-const installButton = document.querySelector("#install");
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
 
-window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  installPrompt = event;
-  installButton.removeAttribute("hidden");
-});
+      const deferredPrompt = e;
 
-installButton.addEventListener("click", async () => {
-  if (!installPrompt) {
-    return;
-  }
-  const result = await installPrompt.prompt();
-  console.log(`Install prompt was: ${result.outcome}`);
-  disableInAppInstallPrompt();
-});
+      const installButton = document.createElement('button');
+      installButton.textContent = 'Install App';
+      installButton.style.position = 'fixed';
+      installButton.style.top = '10px';
+      installButton.style.left = '50%';
+      installButton.style.transform = 'translateX(-50%)';
+      installButton.style.zIndex = '9999';
+      installButton.style.padding = '10px 20px';
+      installButton.classList.add('btn-grad');
+      installButton.style.color = 'white';
+      installButton.style.border = 'none';
+      installButton.style.borderRadius = '5px';
+      installButton.style.cursor = 'pointer';
 
-function disableInAppInstallPrompt() {
-  installPrompt = null;
-  installButton.setAttribute("hidden", "");
+      installButton.addEventListener('click', () => {
+
+          deferredPrompt.prompt();
+
+          deferredPrompt.userChoice.then(choiceResult => {
+              if (choiceResult.outcome === 'accepted') {
+                  console.log('App installed');
+              } else {
+                  console.log('App installation declined');
+              }
+
+              installButton.style.display = 'none';
+          });
+      });
+
+      document.body.appendChild(installButton);
+  });
 }
-
-window.addEventListener("appinstalled", () => {
-  disableInAppInstallPrompt();
-});
 
 reportWebVitals();
