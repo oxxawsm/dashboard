@@ -12,7 +12,7 @@ const Register = lazy(() => import('./pages/Register'))
 
 initializeApp()
 
-const token = checkAuth() // Check for login and initialize axios
+const token = checkAuth();
 
 function App() {
 
