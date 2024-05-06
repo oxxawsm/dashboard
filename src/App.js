@@ -20,7 +20,6 @@ function App() {
     themeChange(false)
   }, [])
 
-
   return (
     <>
       <Router>
