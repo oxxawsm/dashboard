@@ -21,4 +21,12 @@ root.render(
 
 serviceWorkerRegistration.register(); // Регистрация Service Worker'а
 
+if ('serviceWorker' in navigator) {
+  addEventListener('load', async () => {
+      let sw = await navigator.serviceWorker.register('/service-worker.js');
+      console.log(sw);
+  });
+}
+
+
 reportWebVitals();

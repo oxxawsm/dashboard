@@ -14,12 +14,12 @@ webpush.setVapidDetails(
 );
 
 // This is the same output of calling JSON.stringify on a PushSubscription
-const pushSubscription = {
-  endpoint: '.....',
-  keys: {
-    auth: '.....',
-    p256dh: '.....'
-  }
-};
+const pushSubscription = {};
+//   endpoint: '.....',
+//   keys: {
+//     auth: '.....',
+//     p256dh: '.....'
+//   }
+// };
 
-webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
+webpush.sendNotification(pushSubscription, 'test testov');
