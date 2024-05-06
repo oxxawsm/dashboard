@@ -86,3 +86,7 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+
+self.addEventListener('push', () => {
+  self.registration.showNotification('Hello world!', options);
+});

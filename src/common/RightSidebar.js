@@ -13,7 +13,15 @@ function RightSidebar() {
         dispatch(closeRightDrawer(e))
     }
 
-
+    async function subscribe() {
+        let sw = await navigator.serviceWorker.ready;
+        let push = await sw.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey:
+            'BHtMZejRwMIjhIjpQztMfZfofLM6HDBXa4jpNIZ_T2UA_urLa-FTSIcxrnoetD6yg-OLkkIp-4KkTwmCcQo4Vho'
+        });
+        console.log(JSON.stringify(push));
+      }
 
     return (
         <div className={' fixed overflow-hidden z-20 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out ' + (isOpen ? ' transition-opacity opacity-100 duration-500 translate-x-0  ' : ' transition-all delay-500 opacity-0 translate-x-full  ')}>
@@ -27,6 +35,11 @@ function RightSidebar() {
                     </div>
 
                     <div className='overflow-y-scroll pl-4 pr-4'>
+                        <button className='btn btn-ghost bg-violet-100 dark:bg-violet-800 btn-sm normal-case mt-4' 
+                            onClick={() => subscribe()}
+                        >
+                            Оповещать
+                        </button>
                         <div className='flex flex-col w-full'>
                             {
                                 {

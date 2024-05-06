@@ -9,6 +9,13 @@ import { openRightDrawer } from '../slices/rightDrawerSlice';
 import { RIGHT_DRAWER_TYPES } from '../utils/constants'
 
 import { Link } from 'react-router-dom'
+  
+//   if ('serviceWorker' in navigator) {
+//     addEventListener('load', async () => {
+//       let sw = await navigator.serviceWorker.register('./sw.js');
+//       console.log(sw);
+//     });
+//   }
 
 function Header() {
 

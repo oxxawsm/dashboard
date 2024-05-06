@@ -39,7 +39,7 @@ function Dashboard() {
                     />
                 </div>
                 <div className='text-right'>
-                    <button className='btn btn-ghost btn-sm normal-case  ml-2'>
+                    <button className='btn btn-ghost btn-sm normal-case ml-2'>
                         <FileDownloadIcon className='w-4' />
                         Скачать данные
                     </button>
