@@ -9,7 +9,7 @@ async function subscribe() {
     let push = await sw.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey:
-            'BKFyr1BtbbFRSssDa74n43Z5cv04kOY4qwULV24s7DDhlUP4fcFSGlIlDkybsAJcb51f-oAk7934Q1lXn1kiwZI'
+            'BJnYC4KPAP51f3wqPDxhd1BRWrd6cPHdHMUDzaF7EbOAzt-zEfQFG_1pnuNfV7J0bahVyIoI0X-H3omFiKmCqFc'
     });
     console.log(JSON.stringify(push));
 }
@@ -50,7 +50,6 @@ function RightSidebar() {
 
                         </div>
                     </div>
-                    {/* ------------------ Content End ------------------ */}
                 </div>
 
             </section>
