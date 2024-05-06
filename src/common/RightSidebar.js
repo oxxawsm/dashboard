@@ -9,7 +9,7 @@ async function subscribe() {
     let push = await sw.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey:
-            'BHtMZejRwMIjhIjpQztMfZfofLM6HDBXa4jpNIZ_T2UA_urLa-FTSIcxrnoetD6yg-OLkkIp-4KkTwmCcQo4Vho'
+            'BKFyr1BtbbFRSssDa74n43Z5cv04kOY4qwULV24s7DDhlUP4fcFSGlIlDkybsAJcb51f-oAk7934Q1lXn1kiwZI'
     });
     console.log(JSON.stringify(push));
 }

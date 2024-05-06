@@ -3,8 +3,8 @@ const webpush = require('web-push');
 // VAPID keys
 const vapidKeys = {
   publicKey:
-    'BHtMZejRwMIjhIjpQztMfZfofLM6HDBXa4jpNIZ_T2UA_urLa-FTSIcxrnoetD6yg-OLkkIp-4KkTwmCcQo4Vho',
-  privateKey: 'JxL_x1dWfFI5XTjBXeFeBMMjbNuDBCaNqe_IaMw2zbo'
+    'BKFyr1BtbbFRSssDa74n43Z5cv04kOY4qwULV24s7DDhlUP4fcFSGlIlDkybsAJcb51f-oAk7934Q1lXn1kiwZI',
+  privateKey: 'yLYGAgfSGHJJ-HxWOsYJ-b2i00GNpmrG-5WmmkfSztw'
 };
 
 webpush.setVapidDetails(
