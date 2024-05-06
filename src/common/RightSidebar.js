@@ -4,16 +4,6 @@ import { closeRightDrawer } from '../slices/rightDrawerSlice'
 import { RIGHT_DRAWER_TYPES } from '../utils/constants'
 import CloseIcon from '@mui/icons-material/Close';
 
-async function subscribe() {
-    let sw = await navigator.serviceWorker.ready;
-    let push = await sw.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey:
-            'BJnYC4KPAP51f3wqPDxhd1BRWrd6cPHdHMUDzaF7EbOAzt-zEfQFG_1pnuNfV7J0bahVyIoI0X-H3omFiKmCqFc'
-    });
-    console.log(JSON.stringify(push));
-}
-
 function RightSidebar() {
 
     const { isOpen, bodyType, extraObject, header } = useSelector(state => state.rightDrawer)
@@ -35,11 +25,6 @@ function RightSidebar() {
                     </div>
 
                     <div className='overflow-y-scroll pl-4 pr-4'>
-                        <button className='btn btn-ghost bg-violet-100 dark:bg-violet-800 btn-sm normal-case mt-4'
-                            onClick={() => subscribe()}
-                        >
-                            Оповещать
-                        </button>
                         <div className='flex flex-col w-full'>
                             {
                                 {
